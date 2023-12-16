@@ -153,7 +153,6 @@ fig3.update_traces(
     opacity=0.8
 )
 
-fig3.update_layout(legend_title_text='평균속력')
 
 for i in range(150):
     mode = fig3.data[i].mode
@@ -166,6 +165,7 @@ for i in range(150):
 
 # 레이아웃 업데이트하여 레전드가 표시되도록 설정
 fig3.update_layout(showlegend=True)
+fig3.update_layout(legend_title_text='평균속력')
 
 fig3.show(config={'scrollZoom': False})
 ```
