@@ -155,4 +155,17 @@ fig2.show()
 ```{python}
 #| title: 속력별 경로 시각화
 fig3.show()
+for i in range(150):
+    mode = fig3.data[i].mode
+    if 'lines' in mode:
+        # 트레이스가 라인인 경우 레전드 텍스트 업데이트
+        fig3.data[i].name = fig3.data[i].name + f"(path)"
+    elif 'markers' in mode:
+        # 트레이스가 마커를 포함한 스캐터 플롯인 경우 레전드 텍스트 업데이트
+        fig3.data[i].name = fig3.data[i].name + f"(pickup/dropoff)"
+
+# 레이아웃 업데이트하여 레전드가 표시되도록 설정
+fig3.update_layout(showlegend=True)
+
+fig3.show(config={'scrollZoom': False})
 ```
